@@ -35,28 +35,22 @@ const Program: React.FC = () => {
     arrows: false,
     responsive: [
       {
+        breakpoint: 1200,
+        settings: { slidesToShow: 3 },
+      },
+      {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
+        settings: { slidesToShow: 2 },
       },
       {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
+        breakpoint: 768,
+        settings: { slidesToShow: 1 },
       },
     ],
   };
 
   return (
-    <div id="program" className="max-w-screen-xl mx-auto px-4 py-16">
+    <div id="program" className="max-w-screen-xl mx-auto px-4 md:px-10 py-16">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-4xl font-bold text-tertiary-light">
           EXPLORE OUR PROGRAM
@@ -79,7 +73,7 @@ const Program: React.FC = () => {
 
       <Slider ref={sliderRef} {...settings}>
         <div className="p-4">
-          <div className="min-w-[250px] bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
+          <div className="min-w-[250px] max-w-full bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
             <div className="w-14 flex items-center justify-center mb-4 bg-primary-light p-3 rounded">
               <BicepsFlexed className="text-white text-3xl" />
             </div>
@@ -95,7 +89,7 @@ const Program: React.FC = () => {
         </div>
 
         <div className="p-4">
-          <div className="min-w-[250px] bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
+          <div className="min-w-[250px] max-w-full bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
             <div className="w-14 flex items-center justify-center mb-4 bg-primary-light p-3 rounded">
               <HeartPulse className="text-white text-3xl" />
             </div>
@@ -111,7 +105,7 @@ const Program: React.FC = () => {
         </div>
 
         <div className="p-4">
-          <div className="min-w-[250px] bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
+          <div className="min-w-[250px] max-w-full bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
             <div className="w-14 flex items-center justify-center mb-4 bg-primary-light p-3 rounded">
               <Bike className="text-white text-3xl" />
             </div>
@@ -127,7 +121,7 @@ const Program: React.FC = () => {
         </div>
 
         <div className="p-4">
-          <div className="min-w-[250px] bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
+          <div className="min-w-[250px] max-w-full bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
             <div className="w-14 flex items-center justify-center mb-4 bg-primary-light p-3 rounded">
               <ShoppingBasket className="text-white text-3xl" />
             </div>
