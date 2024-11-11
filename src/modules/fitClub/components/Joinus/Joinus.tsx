@@ -20,12 +20,12 @@ const Joinus = () => {
           <img
             src={imgJoin}
             alt="Join Us"
-            className="w-full h-auto rounded-lg shadow-lg"
+            className="w-full h-auto rounded-lg shadow-lg p-4"
           />
         </div>
 
-        <div className="flex flex-row justify-center gap-6 bg-secondary-dark absolute rounded-lg bottom-[-60px] left-1/2 transform -translate-x-1/2">
-          <div className="flex items-center bg-secondary-dark gap-3 p-6 rounded-lg shadow-md text-center w-80">
+        <div className="lg:absolute bottom-[-60px] left-1/2 transform lg:-translate-x-1/2 flex flex-wrap lg:flex-nowrap justify-center gap-6 lg:bg-secondary-dark rounded-lg lg:py-0 m-4">
+          <div className="flex items-center bg-secondary-dark gap-3 p-6 rounded-lg shadow-md text-center w-full md:w-80">
             <div className="flex items-center justify-center bg-primary-light p-4 rounded mb-4">
               <User className="text-white text-2xl" />
             </div>
@@ -37,7 +37,7 @@ const Joinus = () => {
             </div>
           </div>
 
-          <div className="flex items-center bg-secondary-dark gap-3 p-6 rounded-lg shadow-md text-center w-80">
+          <div className="flex items-center bg-secondary-dark gap-3 p-6 rounded-lg shadow-md text-center w-full md:w-80">
             <div className="flex items-center justify-center bg-primary-light p-4 rounded mb-4">
               <Video className="text-white text-2xl" />
             </div>
@@ -49,7 +49,7 @@ const Joinus = () => {
             </div>
           </div>
 
-          <div className="flex items-center bg-secondary-dark gap-3 p-6 rounded-lg shadow-md text-center w-80">
+          <div className="flex items-center bg-secondary-dark gap-3 p-6 rounded-lg shadow-md text-center w-full md:w-80">
             <div className="flex items-center justify-center bg-primary-light p-4 rounded mb-4">
               <Building2 className="text-white text-2xl" />
             </div>
