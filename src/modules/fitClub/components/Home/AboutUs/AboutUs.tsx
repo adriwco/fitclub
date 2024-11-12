@@ -30,7 +30,7 @@ const AboutUs = () => {
           fitter, and more confident you. Sign up for 'Make Your Body Shape' now
           and witness the incredible transformation your body is capable of!
         </p>
-        <Button>Get Started</Button>
+        <Button ariaLabel="Get Started">Get Started</Button>
       </div>
 
       <div className="relative flex items-center justify-center">

@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
           </nav>
 
           <div className="hidden md:block">
-            <Button>Join Now</Button>
+            <Button ariaLabel="Join Now">Join Now</Button>
           </div>
         </header>
       </div>
@@ -94,7 +94,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
             {item.label}
           </a>
         ))}
-        <Button>Join Now</Button>
+        <Button ariaLabel="Join Now">Join Now</Button>
       </Menu>
 
       {isMenuOpen && (

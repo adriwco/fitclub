@@ -25,7 +25,10 @@ const PlanCard: React.FC<PlanCardProps> = ({
           ))}
         </ul>
       </div>
-      <button className="w-full bg-transparent text-primary-light py-2 px-4 rounded-lg border border-primary-light hover:bg-primary-light hover:text-white transition duration-300 mt-auto">
+      <button
+        aria-label={buttonText}
+        className="w-full bg-transparent text-primary-light py-2 px-4 rounded-lg border border-primary-light hover:bg-primary-light hover:text-white transition duration-300 mt-auto"
+      >
         {buttonText}
       </button>
     </div>

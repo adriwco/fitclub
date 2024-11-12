@@ -21,7 +21,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="mb-4">{description}</p>
-      <Button>{buttonText}</Button>
+      <Button ariaLabel={buttonText}>{buttonText}</Button>
     </div>
   );
 };

@@ -32,7 +32,7 @@ const BookClass = () => {
           challenged, ensuring you never hit a plateau in your fitness
           endeavors.
         </p>
-        <Button>Book A Class</Button>
+        <Button ariaLabel="Book A Class">Book A Class</Button>
       </div>
     </div>
   );
