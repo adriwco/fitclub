@@ -87,12 +87,14 @@ const Program: React.FC = () => {
           <button
             onClick={handlePrev}
             className="text-white hover:text-orange-600 transition"
+            aria-label="Previous slide"
           >
             <CircleArrowLeft size={35} />
           </button>
           <button
             onClick={handleNext}
             className="text-white hover:text-orange-600 transition"
+            aria-label="Next slide"
           >
             <CircleChevronRight size={35} />
           </button>
