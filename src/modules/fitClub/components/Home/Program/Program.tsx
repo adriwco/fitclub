@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Button from '../../Button/Button';
+import ProgramCard from '../../Cards/ProgramCard';
 
 const Program: React.FC = () => {
   const sliderRef = useRef<Slider>(null);
@@ -50,6 +50,33 @@ const Program: React.FC = () => {
     ],
   };
 
+  const programData = [
+    {
+      icon: <BicepsFlexed className="text-white text-3xl" />,
+      title: 'Strength',
+      description:
+        'Embrace the essence of strength as we delve into its various dimensions physical, mental, and emotional.',
+    },
+    {
+      icon: <HeartPulse className="text-white text-3xl" />,
+      title: 'Physical Fitness',
+      description:
+        'It encompasses a range of activities that improve health, strength, flexibility, and overall well-being.',
+    },
+    {
+      icon: <Bike className="text-white text-3xl" />,
+      title: 'Fat Lose',
+      description:
+        'Through a combination of workout routines and expert guidance, we’ll empower you to reach your goals.',
+    },
+    {
+      icon: <ShoppingBasket className="text-white text-3xl" />,
+      title: 'Weight Gain',
+      description:
+        'Designed for individuals, our program offers an effective approach to gaining weight in a sustainable manner.',
+    },
+  ];
+
   return (
     <div id="program" className="max-w-screen-xl mx-auto px-4 md:px-10 py-16">
       <div className="flex justify-between items-center mb-8">
@@ -73,63 +100,15 @@ const Program: React.FC = () => {
       </div>
 
       <Slider ref={sliderRef} {...settings}>
-        <div className="p-4">
-          <div className="min-w-[250px] max-w-full bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
-            <div className="w-14 flex items-center justify-center mb-4 bg-primary-light p-3 rounded">
-              <BicepsFlexed className="text-white text-3xl" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Strength</h3>
-            <p className="mb-4">
-              Embrace the essence of strength as we delve into its various
-              dimensions physical, mental, and emotional.
-            </p>
-            <Button>Join Now →</Button>
+        {programData.map((program, index) => (
+          <div key={index} className="p-4">
+            <ProgramCard
+              icon={program.icon}
+              title={program.title}
+              description={program.description}
+            />
           </div>
-        </div>
-
-        <div className="p-4">
-          <div className="min-w-[250px] max-w-full bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
-            <div className="w-14 flex items-center justify-center mb-4 bg-primary-light p-3 rounded">
-              <HeartPulse className="text-white text-3xl" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Physical Fitness</h3>
-            <p className="mb-4">
-              It encompasses a range of activities that improve health,
-              strength, flexibility, and overall well-being.
-            </p>
-            <Button>Join Now →</Button>
-          </div>
-        </div>
-
-        <div className="p-4">
-          <div className="min-w-[250px] max-w-full bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
-            <div className="w-14 flex items-center justify-center mb-4 bg-primary-light p-3 rounded">
-              <Bike className="text-white text-3xl" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Fat Lose</h3>
-            <p className="mb-4">
-              Through a combination of workout routines and expert guidance,
-              we’ll empower you to reach your goals.
-            </p>
-            <Button>Join Now →</Button>
-          </div>
-        </div>
-
-        <div className="p-4">
-          <div className="min-w-[250px] max-w-full bg-secondary-dark text-white p-6 rounded-lg shadow-lg transition-all hover:shadow-[0_0_0_4px_rgba(249,172,84,1)]">
-            <div className="w-14 flex items-center justify-center mb-4 bg-primary-light p-3 rounded">
-              <ShoppingBasket className="text-white text-3xl" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Weight Gain</h3>
-            <p className="mb-4">
-              Designed for individuals, our program offers an effective approach
-              to gaining weight in a sustainable manner.
-            </p>
-            <button className="bg-primary-light text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300">
-              Join Now →
-            </button>
-          </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );

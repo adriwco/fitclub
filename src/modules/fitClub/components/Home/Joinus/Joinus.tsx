@@ -1,7 +1,27 @@
+import React from 'react';
 import { User, Video, Building2 } from 'lucide-react';
 import imgJoin from '../../../../../assets/bg/join.jpg';
+import BenefitCard from '../../Cards/BenefitCard';
 
-const Joinus = () => {
+const Joinus: React.FC = () => {
+  const benefits = [
+    {
+      icon: <User className="text-white text-2xl" />,
+      title: 'Personal Trainer',
+      description: 'Unlock your potential with our expert Personal Trainers.',
+    },
+    {
+      icon: <Video className="text-white text-2xl" />,
+      title: 'Practice Sessions',
+      description: 'Elevate your fitness with practice sessions.',
+    },
+    {
+      icon: <Building2 className="text-white text-2xl" />,
+      title: 'Good Management',
+      description: 'Supportive management, for your fitness success.',
+    },
+  ];
+
   return (
     <div
       id="service"
@@ -25,41 +45,14 @@ const Joinus = () => {
         </div>
 
         <div className="lg:absolute bottom-[-60px] left-1/2 transform lg:-translate-x-1/2 flex flex-wrap lg:flex-nowrap justify-center gap-6 lg:bg-secondary-dark rounded-lg lg:py-0 m-4">
-          <div className="flex items-center bg-secondary-dark gap-3 p-6 rounded-lg shadow-md text-center w-full md:w-80">
-            <div className="flex items-center justify-center bg-primary-light p-4 rounded mb-4">
-              <User className="text-white text-2xl" />
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Personal Trainer</h3>
-              <p className="text-gray-300">
-                Unlock your potential with our expert Personal Trainers.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center bg-secondary-dark gap-3 p-6 rounded-lg shadow-md text-center w-full md:w-80">
-            <div className="flex items-center justify-center bg-primary-light p-4 rounded mb-4">
-              <Video className="text-white text-2xl" />
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Practice Sessions</h3>
-              <p className="text-gray-300">
-                Elevate your fitness with practice sessions.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center bg-secondary-dark gap-3 p-6 rounded-lg shadow-md text-center w-full md:w-80">
-            <div className="flex items-center justify-center bg-primary-light p-4 rounded mb-4">
-              <Building2 className="text-white text-2xl" />
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Good Management</h3>
-              <p className="text-gray-300">
-                Supportive management, for your fitness success.
-              </p>
-            </div>
-          </div>
+          {benefits.map((benefit, index) => (
+            <BenefitCard
+              key={index}
+              icon={benefit.icon}
+              title={benefit.title}
+              description={benefit.description}
+            />
+          ))}
         </div>
       </div>
     </div>

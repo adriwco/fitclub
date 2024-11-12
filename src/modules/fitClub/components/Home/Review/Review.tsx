@@ -4,8 +4,9 @@ import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 import user from '../../../../../assets/review_users/member.jpg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ReviewCard from '../../Cards/ReviewCard';
 
-const Review = () => {
+const Review: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
 
   const handlePrev = () => sliderRef.current?.slickPrev();
@@ -19,6 +20,23 @@ const Review = () => {
     slidesToScroll: 1,
     arrows: false,
   };
+
+  const reviews = [
+    {
+      text: 'What truly sets this gym apart is their expert team of trainers. The trainers are knowledgeable, approachable, and genuinely invested in helping members achieve their fitness goals.',
+      rating: 4.5,
+      reviewerName: 'Jane Cooper',
+      reviewerJob: 'Software Developer',
+      reviewerImage: user,
+    },
+    {
+      text: 'This gym has changed my life. The facilities are top-notch, and the environment is so motivating. The trainers truly care about your progress.',
+      rating: 5,
+      reviewerName: 'John Smith',
+      reviewerJob: 'Fitness Enthusiast',
+      reviewerImage: user,
+    },
+  ];
 
   return (
     <div
@@ -39,61 +57,16 @@ const Review = () => {
       </h3>
 
       <Slider ref={sliderRef} {...settings} className="px-4 relative z-10">
-        <div>
-          <div className="md:w-full mb-8">
-            <p className="text-xl mb-4">
-              What truly sets this gym apart is their expert team of trainers.
-              The trainers are knowledgeable, approachable, and genuinely
-              invested in helping members achieve their fitness goals.
-            </p>
-            <div className="flex items-center gap-1 mb-6">
-              <span className="text-primary-light text-2xl">★</span>
-              <span className="text-primary-light text-2xl">★</span>
-              <span className="text-primary-light text-2xl">★</span>
-              <span className="text-primary-light text-2xl">★</span>
-              <span className="text-primary-light text-2xl">½</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <img
-                src={user}
-                alt="Reviewer"
-                className="w-12 h-12 rounded-full"
-              />
-              <div>
-                <h4 className="text-lg font-bold">Jane Cooper</h4>
-                <p className="text-sm text-gray-400">Software Developer</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div className="md:w-full mb-8">
-            <p className="text-xl mb-4">
-              This gym has changed my life. The facilities are top-notch, and
-              the environment is so motivating. The trainers truly care about
-              your progress.
-            </p>
-            <div className="flex items-center gap-1 mb-6">
-              <span className="text-primary-light text-2xl">★</span>
-              <span className="text-primary-light text-2xl">★</span>
-              <span className="text-primary-light text-2xl">★</span>
-              <span className="text-primary-light text-2xl">★</span>
-              <span className="text-primary-light text-2xl">★</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <img
-                src={user}
-                alt="Reviewer"
-                className="w-12 h-12 rounded-full"
-              />
-              <div>
-                <h4 className="text-lg font-bold">John Smith</h4>
-                <p className="text-sm text-gray-400">Fitness Enthusiast</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {reviews.map((review, index) => (
+          <ReviewCard
+            key={index}
+            text={review.text}
+            rating={review.rating}
+            reviewerName={review.reviewerName}
+            reviewerJob={review.reviewerJob}
+            reviewerImage={review.reviewerImage}
+          />
+        ))}
       </Slider>
 
       <div className="absolute bottom-4 right-4 flex items-center gap-4 z-10">
