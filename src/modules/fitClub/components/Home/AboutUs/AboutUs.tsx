@@ -39,7 +39,7 @@ const AboutUs = () => {
         <img
           src={imgMan}
           alt="Man lifting weights"
-          className="w-80 object-cover z-10"
+          className="md:w-80 w-[1000px] object-cover z-10"
         />
       </div>
 
