@@ -34,7 +34,8 @@ const AboutUs = () => {
       </div>
 
       <div className="relative flex items-center justify-center">
-        <div className="absolute w-80 h-80 rounded-full bg-primary-light opacity-20 z-0"></div>
+        <div className="absolute w-80 h-80 rounded-full border-[50px] border-primary-light opacity-10 z-0 top-5" />
+
         <img
           src={imgMan}
           alt="Man lifting weights"
