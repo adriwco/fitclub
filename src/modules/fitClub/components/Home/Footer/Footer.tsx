@@ -25,9 +25,21 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { href: '#', icon: <Facebook className="text-white" /> },
-    { href: '#', icon: <Instagram className="text-white" /> },
-    { href: '#', icon: <Twitter className="text-white" /> },
+    {
+      href: '#',
+      icon: <Facebook className="text-white" />,
+      label: 'Visit our Facebook page',
+    },
+    {
+      href: '#',
+      icon: <Instagram className="text-white" />,
+      label: 'Visit our Twitter profile',
+    },
+    {
+      href: '#',
+      icon: <Twitter className="text-white" />,
+      label: 'Visit our Instagram profile',
+    },
   ];
 
   return (

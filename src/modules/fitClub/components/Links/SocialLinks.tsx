@@ -3,6 +3,7 @@ import React from 'react';
 interface SocialLink {
   href: string;
   icon: React.ReactNode;
+  label: string;
 }
 
 interface SocialLinksProps {
@@ -16,6 +17,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ links }) => {
         <a
           key={index}
           href={link.href}
+          aria-label={link.label}
           className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-light hover:bg-orange-600 transition"
         >
           {link.icon}
