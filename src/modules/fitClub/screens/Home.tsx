@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AboutUs from '../components/Home/AboutUs/AboutUs';
 import BookClass from '../components/Home/BookClass/BookClass';
 import Footer from '../components/Home/Footer/Footer';
@@ -9,6 +9,8 @@ import Program from '../components/Home/Program/Program';
 import Review from '../components/Home/Review/Review';
 
 const Home = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     const lights = document.querySelectorAll<HTMLElement>('.light');
     const moveLights = () => {
@@ -31,16 +33,23 @@ const Home = () => {
         <div className="absolute w-[300px] h-[300px] rounded-full bg-yellow-500 opacity-5 blur-[100px] light"></div>
       </div>
 
-      <Header />
-      <AboutUs />
-      <Program />
-      <BookClass />
-      <Joinus />
-      <Plan />
-      <div className="bg-tertiary-dark">
-        <Review />
+      <Header setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
+
+      <div
+        className={`transition-all duration-300 ${
+          isMenuOpen ? 'filter blur-sm brightness-75' : ''
+        }`}
+      >
+        <AboutUs />
+        <Program />
+        <BookClass />
+        <Joinus />
+        <Plan />
+        <div className="bg-tertiary-dark">
+          <Review />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };

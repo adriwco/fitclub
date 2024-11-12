@@ -61,11 +61,11 @@
   transition: transform 3s ease-in-out;
 }
 button {
-  z-index: 9999;
+  z-index: 1000;
   position: relative;
 }
 a {
-  z-index: 9999;
+  z-index: 1000;
   position: relative;
 }
 
@@ -73,4 +73,48 @@ a {
   margin: 0;
   padding: 0;
   min-width: unset;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 20px;
+  top: 20px;
+}
+
+.bm-burger-bars {
+  background: #f9ac54;
+}
+
+.bm-burger-bars-hover {
+  background: #ff7a00;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #fff;
+}
+
+.bm-menu {
+  background: #1c1c1e;
+  padding: 2.5em 2em 0;
+  font-size: 1.15em;
+  width: 100%;
+}
+
+.bm-item-list {
+  color: #f9ac54;
+}
+
+.bm-item:hover {
+  color: #ff7a00;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }

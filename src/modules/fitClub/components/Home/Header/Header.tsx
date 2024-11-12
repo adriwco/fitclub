@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { bubble as Menu } from 'react-burger-menu';
 import Logo from '../../../../../assets/logo/logo.png';
 import MenuItem from '../../MenuItem/MenuItem';
 import Button from '../../Button/Button';
+import { AlignRight, X } from 'lucide-react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const menuItems = [
     { href: '#home', label: 'Home' },
     { href: '#program', label: 'Program' },
@@ -12,22 +19,91 @@ const Header: React.FC = () => {
     { href: '#community', label: 'Community' },
   ];
 
+  const handleStateChange = (state: { isOpen: boolean }) => {
+    setIsMenuOpen(state.isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [setIsMenuOpen]);
+
   return (
-    <header className="flex items-center justify-between p-4 max-w-screen-xl mx-auto">
-      <div>
-        <img src={Logo} alt="Logo" className="h-8" />
+    <div id="home">
+      <div
+        className={`transition-all duration-300 ${isMenuOpen ? 'hidden' : ''}`}
+      >
+        <header className="flex items-center justify-between p-4 max-w-screen-xl mx-auto">
+          <div>
+            <img src={Logo} alt="Logo" className="h-8" />
+          </div>
+
+          <nav className="hidden md:flex space-x-8">
+            {menuItems.map((item) => (
+              <MenuItem key={item.href} href={item.href}>
+                {item.label}
+              </MenuItem>
+            ))}
+          </nav>
+
+          <div className="hidden md:block">
+            <Button>Join Now</Button>
+          </div>
+        </header>
       </div>
 
-      <nav className="hidden md:flex space-x-8">
-        {menuItems.map((item) => (
-          <MenuItem key={item.href} href={item.href}>
-            {item.label}
-          </MenuItem>
-        ))}
-      </nav>
+      <Menu
+        right
+        isOpen={isMenuOpen}
+        onStateChange={handleStateChange}
+        className="block md:hidden"
+        customBurgerIcon={
+          <div className="text-white flex bg-primary-light rounded md:hidden justify-center items-center">
+            <AlignRight />
+          </div>
+        }
+        customCrossIcon={
+          <div className="rounded">
+            <X color="black" />
+          </div>
+        }
+      >
+        <div className="mb-10">
+          <img src={Logo} alt="Logo" className="h-8" />
+        </div>
 
-      <Button>Join Now</Button>
-    </header>
+        {menuItems.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className="text-tertiary-light text-lg block mb-4"
+            onClick={closeMenu}
+          >
+            {item.label}
+          </a>
+        ))}
+        <Button>Join Now</Button>
+      </Menu>
+
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-10 md:hidden"
+          onClick={closeMenu}
+        ></div>
+      )}
+    </div>
   );
 };
 
