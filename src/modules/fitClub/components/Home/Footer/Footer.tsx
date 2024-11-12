@@ -1,6 +1,35 @@
+import React from 'react';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
+import FooterLinks from '../../Links/FooterLinks';
+import SocialLinks from '../../Links/SocialLinks';
 
-const Footer = () => {
+const Footer: React.FC = () => {
+  const companyLinks = [
+    { label: 'Business', href: '#' },
+    { label: 'Franchise', href: '#' },
+    { label: 'Partnership', href: '#' },
+    { label: 'Network', href: '#' },
+  ];
+
+  const aboutUsLinks = [
+    { label: 'Blogs', href: '#' },
+    { label: 'Security', href: '#' },
+    { label: 'Careers', href: '#' },
+  ];
+
+  const contactLinks = [
+    { label: 'Contact Us', href: '#' },
+    { label: 'Privacy Policy', href: '#' },
+    { label: 'Terms & Conditions', href: '#' },
+    { label: 'BMI Calculator', href: '#' },
+  ];
+
+  const socialLinks = [
+    { href: '#', icon: <Facebook className="text-white" /> },
+    { href: '#', icon: <Instagram className="text-white" /> },
+    { href: '#', icon: <Twitter className="text-white" /> },
+  ];
+
   return (
     <footer className="text-tertiary-light py-16">
       <div className="max-w-screen-xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -13,100 +42,12 @@ const Footer = () => {
             unbeatable pricing plans. Let's sweat, achieve, and conquer
             together!
           </p>
-          <div className="flex space-x-4">
-            <a
-              href="#"
-              className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-light hover:bg-orange-600 transition"
-            >
-              <Facebook className="text-white" />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-light hover:bg-orange-600 transition"
-            >
-              <Instagram className="text-white" />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-light hover:bg-orange-600 transition"
-            >
-              <Twitter className="text-white" />
-            </a>
-          </div>
+          <SocialLinks links={socialLinks} />
         </div>
 
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Company</h3>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Business
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Franchise
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Partnership
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Network
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold mb-4">About Us</h3>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Blogs
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Security
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Careers
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Contact</h3>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Contact Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                Terms & Conditions
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-primary-light">
-                BMI Calculator
-              </a>
-            </li>
-          </ul>
-        </div>
+        <FooterLinks title="Company" links={companyLinks} />
+        <FooterLinks title="About Us" links={aboutUsLinks} />
+        <FooterLinks title="Contact" links={contactLinks} />
       </div>
     </footer>
   );
