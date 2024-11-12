@@ -1,5 +1,6 @@
 import imgBig from '../../../../../assets/bg/class-1.jpg';
 import imgSmall from '../../../../../assets/bg/class-2.jpg';
+import Button from '../../Button/Button';
 
 const BookClass = () => {
   return (
@@ -31,9 +32,7 @@ const BookClass = () => {
           challenged, ensuring you never hit a plateau in your fitness
           endeavors.
         </p>
-        <button className="bg-primary-light text-white py-2 px-6 rounded-lg hover:bg-orange-600 transition duration-300">
-          Book A Class
-        </button>
+        <Button>Book A Class</Button>
       </div>
     </div>
   );

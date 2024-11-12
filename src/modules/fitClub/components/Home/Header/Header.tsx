@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../../../../../assets/logo/logo.png';
 import MenuItem from '../../MenuItem/MenuItem';
+import Button from '../../Button/Button';
 
 const Header: React.FC = () => {
   const menuItems = [
@@ -25,9 +26,7 @@ const Header: React.FC = () => {
         ))}
       </nav>
 
-      <button className="bg-primary-light text-white py-2 px-6 rounded-lg hover:bg-orange-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-opacity-50">
-        Join Now
-      </button>
+      <Button>Join Now</Button>
     </header>
   );
 };

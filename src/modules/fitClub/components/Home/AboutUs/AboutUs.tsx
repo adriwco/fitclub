@@ -1,4 +1,5 @@
 import imgMan from '../../../../../assets/bg/header.png';
+import Button from '../../Button/Button';
 
 const AboutUs = () => {
   return (
@@ -29,9 +30,7 @@ const AboutUs = () => {
           fitter, and more confident you. Sign up for 'Make Your Body Shape' now
           and witness the incredible transformation your body is capable of!
         </p>
-        <button className="bg-primary-light text-white py-2 px-6 rounded-lg hover:bg-orange-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-opacity-50">
-          Get Started
-        </button>
+        <Button>Get Started</Button>
       </div>
 
       <div className="relative flex items-center justify-center">

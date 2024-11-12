@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Button from '../../Button/Button';
 
 const Program: React.FC = () => {
   const sliderRef = useRef<Slider>(null);
@@ -82,9 +83,7 @@ const Program: React.FC = () => {
               Embrace the essence of strength as we delve into its various
               dimensions physical, mental, and emotional.
             </p>
-            <button className="bg-primary-light text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300">
-              Join Now →
-            </button>
+            <Button>Join Now →</Button>
           </div>
         </div>
 
@@ -98,9 +97,7 @@ const Program: React.FC = () => {
               It encompasses a range of activities that improve health,
               strength, flexibility, and overall well-being.
             </p>
-            <button className="bg-primary-light text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300">
-              Join Now →
-            </button>
+            <Button>Join Now →</Button>
           </div>
         </div>
 
@@ -114,9 +111,7 @@ const Program: React.FC = () => {
               Through a combination of workout routines and expert guidance,
               we’ll empower you to reach your goals.
             </p>
-            <button className="bg-primary-light text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300">
-              Join Now →
-            </button>
+            <Button>Join Now →</Button>
           </div>
         </div>
 
