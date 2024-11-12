@@ -73,12 +73,14 @@ const Review: React.FC = () => {
         <button
           onClick={handlePrev}
           className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-light hover:bg-orange-600 transition"
+          aria-label="Previous slide"
         >
           <ArrowLeft className="text-white" />
         </button>
         <button
           onClick={handleNext}
           className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-light hover:bg-orange-600 transition"
+          aria-label="Next slide"
         >
           <ArrowRight className="text-white" />
         </button>
