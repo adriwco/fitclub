@@ -88,13 +88,20 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
           <a
             key={item.href}
             href={item.href}
-            className="text-tertiary-light text-lg block mb-4"
+            aria-label={`Navigate to ${item.label}`}
+            className="text-tertiary-light text-lg block mb-4 focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-opacity-50"
             onClick={closeMenu}
           >
             {item.label}
           </a>
         ))}
-        <Button ariaLabel="Join Now">Join Now</Button>
+
+        <Button
+          ariaLabel="Join Now"
+          className="bg-orange-600 hover:bg-orange-700 text-white w-full py-2 mt-4"
+        >
+          Join Now
+        </Button>
       </Menu>
 
       {isMenuOpen && (
