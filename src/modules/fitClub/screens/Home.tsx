@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import AboutUs from '../components/AboutUs/AboutUs';
-import BookClass from '../components/BookClass/BookClass';
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Header/Header';
-import Joinus from '../components/Joinus/Joinus';
-import Plan from '../components/Plan/Plan';
-import Program from '../components/Program/Program';
-import Review from '../components/Review/Review';
+import AboutUs from '../components/Home/AboutUs/AboutUs';
+import BookClass from '../components/Home/BookClass/BookClass';
+import Footer from '../components/Home/Footer/Footer';
+import Header from '../components/Home/Header/Header';
+import Joinus from '../components/Home/Joinus/Joinus';
+import Plan from '../components/Home/Plan/Plan';
+import Program from '../components/Home/Program/Program';
+import Review from '../components/Home/Review/Review';
 
 const Home = () => {
   useEffect(() => {

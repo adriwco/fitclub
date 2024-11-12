@@ -1,4 +1,4 @@
-import imgMan from '../../../../assets/bg/header.png';
+import imgMan from '../../../../../assets/bg/header.png';
 
 const AboutUs = () => {
   return (

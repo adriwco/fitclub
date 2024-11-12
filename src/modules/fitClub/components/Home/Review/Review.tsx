@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import Slider from 'react-slick';
 import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
-import user from '../../../../assets/review_users/member.jpg';
+import user from '../../../../../assets/review_users/member.jpg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 

@@ -1,5 +1,5 @@
 import { User, Video, Building2 } from 'lucide-react';
-import imgJoin from '../../../../assets/bg/join.jpg';
+import imgJoin from '../../../../../assets/bg/join.jpg';
 
 const Joinus = () => {
   return (

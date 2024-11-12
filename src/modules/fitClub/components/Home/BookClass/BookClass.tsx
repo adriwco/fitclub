@@ -1,5 +1,5 @@
-import imgBig from '../../../../assets/bg/class-1.jpg';
-import imgSmall from '../../../../assets/bg/class-2.jpg';
+import imgBig from '../../../../../assets/bg/class-1.jpg';
+import imgSmall from '../../../../../assets/bg/class-2.jpg';
 
 const BookClass = () => {
   return (
